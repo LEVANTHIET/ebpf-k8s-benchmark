@@ -1,0 +1,43 @@
+Running 2.00m test @ http://192.168.10.30:30080/
+  2 threads and 400 connections
+  Thread calibration: mean lat.: 65.386ms, rate sampling interval: 217ms
+  Thread calibration: mean lat.: 67.254ms, rate sampling interval: 224ms
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    62.27ms   90.26ms  530.72ms   89.40%
+    Req/Sec   3627.10    435.25   5622.01    81.20%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%   55.60ms
+ 75.000%   88.20ms
+ 90.000%  141.00ms
+ 99.000%  270.50ms
+ 99.900%  428.00ms
+ 99.990%  479.36ms
+ 99.999%  513.60ms
+100.000%  530.72ms
+
+  Detailed Percentile spectrum:
+       Value   Percentile   TotalCount 1/(1-Percentile)
+
+     13.900     0.000000            1           1.00
+     33.360     0.100000        87050           1.11
+     40.032     0.200000       174101           1.25
+     45.036     0.300000       261151           1.43
+     50.040     0.400000       348202           1.67
+     55.600     0.500000       435252           2.00
+     71.900     0.625000       544065           2.67
+     88.200     0.750000       652878           4.00
+    114.600     0.825000       718166           5.71
+    141.000     0.900000       783454          10.00
+    185.175     0.950000       826979          20.00
+    270.500     0.990000       861799         100.00
+    428.000     0.999000       869633        1000.00
+    479.360     0.999900       870417       10000.00
+    530.720     1.000000       870504            inf
+#[Mean    =       62.272, StdDeviation   =       90.258]
+#[Max     =      530.720, Total count    =       870504]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  870504 requests in 2.00m, 941.06MB read
+  Socket errors: connect 0, read 0, write 0, timeout 14
+Requests/sec:   7254.20
+Transfer/sec:      7.84MB

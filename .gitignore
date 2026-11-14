@@ -1,0 +1,18 @@
+# Thu muc SSH keys / thong tin ket noi noi bo
+ssh/
+
+# Python cache & moi truong ao
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Tai lieu ban nhap & file chup man hinh VM tam thoi
+synthesize_results.py
+batch_tasks.json
+format_sheets.ps1
+*.pdf
+*.html
+vm_*.png
+worker*.png
+headless_boot.png

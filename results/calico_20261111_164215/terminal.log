@@ -1,0 +1,45 @@
+[2026-11-11 16:42:15] CMD: python -u run_experiment.py calico  (Lan do 2/3)
+16:42:15 == k1
+-> K1.1 iperf3 TCP 30s, 4 luong
+   Throughput L4 = 93.85 Mbps
+-> K1.2 wrk2 latency 2000 RPS, 60s
+   p50=3.80ms | p99=58.90ms | p99.9=172.10ms | RPS=1995.85
+DONE -> /tmp/ebpf/out/k1
+16:43:47 == k2_50
+namespace/benchmark-rules created
+  -> 50 / 50 services
+scale=50 create_s=5.3 program_s=0.36
+16:43:54 on dinh 60s
+-> K2 wrk2 Connection: close 3000 RPS, 60s
+   RPS=2905.10 | p50=12.10ms | p99=86.20ms
+DONE -> /tmp/ebpf/out/k2_50
+16:45:52 == k2_500
+namespace/benchmark-rules created
+  -> 500 / 500 services
+scale=500 create_s=59.1 program_s=1.92
+16:46:53 on dinh 60s
+-> K2 wrk2 Connection: close 3000 RPS, 60s
+   RPS=2668.90 | p50=47.40ms | p99=252.40ms
+DONE -> /tmp/ebpf/out/k2_500
+16:48:51 == k2_1000
+namespace/benchmark-rules created
+  -> 1000 / 1000 services
+scale=1000 create_s=124.5 program_s=4.48
+16:50:57 on dinh 60s
+-> K2 wrk2 Connection: close 3000 RPS, 60s
+   RPS=2358.40 | p50=137.50ms | p99=598.00ms
+DONE -> /tmp/ebpf/out/k2_1000
+16:52:55 == k2_1500
+namespace/benchmark-rules created
+  -> 1500 / 1500 services
+scale=1500 create_s=172.4 program_s=8.10
+16:55:49 on dinh 60s
+-> K2 wrk2 Connection: close 3000 RPS, 60s
+   RPS=2012.70 | p50=282.00ms | p99=1168.00ms
+DONE -> /tmp/ebpf/out/k2_1500
+16:58:07 == k3 (K3A - Hubble OFF)
+-> K3 bao hoa 400 ket noi, 20000 RPS, 120s
+   RPS=7254.20 | p50=55.60ms | p99=270.50ms | connect 0, read 0, write 0, timeout 14
+DONE -> /tmp/ebpf/out/k3
+17:00:07 Da luu log vao C:\Users\LOG\.gemini\antigravity\scratch\ebpf-k8s-plan\results\calico_20261111_164215
+[OK] Hoan tat lan do calico (2/3)

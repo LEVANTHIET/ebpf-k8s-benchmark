@@ -1,0 +1,49 @@
+[2026-11-12 15:26:40] CMD: python -u run_experiment.py cilium  (Lan do 2/3)
+15:26:40 == k1
+-> K1.1 iperf3 TCP 30s, 4 luong
+   Throughput L4 = 97.14 Mbps
+-> K1.2 wrk2 latency 2000 RPS, 60s
+   p50=3.47ms | p99=26.55ms | p99.9=65.20ms | RPS=1998.80
+DONE -> /tmp/ebpf/out/k1
+15:28:12 == k2_50
+namespace/benchmark-rules created
+  -> 50 / 50 services
+scale=50 create_s=4.4 program_s=0.05
+15:28:18 on dinh 60s
+-> K2 wrk2 Connection: close 3000 RPS, 60s
+   RPS=2987.60 | p50=5.98ms | p99=40.60ms
+DONE -> /tmp/ebpf/out/k2_50
+15:30:16 == k2_500
+namespace/benchmark-rules created
+  -> 500 / 500 services
+scale=500 create_s=50.8 program_s=0.11
+15:31:08 on dinh 60s
+-> K2 wrk2 Connection: close 3000 RPS, 60s
+   RPS=2979.00 | p50=6.24ms | p99=42.30ms
+DONE -> /tmp/ebpf/out/k2_500
+15:33:07 == k2_1000
+namespace/benchmark-rules created
+  -> 1000 / 1000 services
+scale=1000 create_s=99.1 program_s=0.20
+15:34:48 on dinh 60s
+-> K2 wrk2 Connection: close 3000 RPS, 60s
+   RPS=2968.80 | p50=6.52ms | p99=44.40ms
+DONE -> /tmp/ebpf/out/k2_1000
+15:36:46 == k2_1500
+namespace/benchmark-rules created
+  -> 1500 / 1500 services
+scale=1500 create_s=146.2 program_s=0.30
+15:39:14 on dinh 60s
+-> K2 wrk2 Connection: close 3000 RPS, 60s
+   RPS=2956.40 | p50=6.81ms | p99=46.70ms
+DONE -> /tmp/ebpf/out/k2_1500
+15:41:32 == k3 (K3A - Hubble OFF)
+-> K3 bao hoa 400 ket noi, 20000 RPS, 120s
+   RPS=9694.10 | p50=36.10ms | p99=165.10ms
+DONE -> /tmp/ebpf/out/k3
+15:43:42 == k3b (Hubble Relay ON)
+-> K3B bat Cilium Hubble Relay, 400 ket noi, 60s
+   RPS=9480.80 | p50=37.90ms | p99=173.00ms
+DONE -> /tmp/ebpf/out/k3b
+15:44:42 Da luu log vao C:\Users\LOG\.gemini\antigravity\scratch\ebpf-k8s-plan\results\cilium_20261112_152640
+[OK] Hoan tat lan do cilium (2/3)
