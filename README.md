@@ -47,8 +47,6 @@ Toàn bộ chiến dịch đo kiểm được thực thi qua 4 kịch bản chu�
 ├── .gitignore                         # Loại trừ khóa SSH, cache Python và tệp nháp tạm thời
 ├── run_experiment.py                  # Điều phối thực nghiệm từ xa qua SSH/SFTP (Paramiko)
 ├── record_run.py                      # Ghi terminal.log và quay video MP4 quá trình chạy thực nghiệm
-├── plot.py                            # Phân tích log, tính Mean ± Std (n=3) và vẽ biểu đồ đối chứng
-├── generate_diagrams.py               # Mã nguồn Python vẽ sơ đồ Topology và Kiến trúc phân tầng
 │
 ├── scripts/                           # Bộ công cụ triển khai & sinh tải trên worker-1 / worker-2
 │   ├── target-app.yaml                # Deployment target-server (nginx:alpine) & Service NodePort :30080
@@ -116,12 +114,6 @@ python record_run.py results/run_calico python -u run_experiment.py calico
 
 # 2. Hoặc chạy trực tiếp script điều phối
 python -u run_experiment.py cilium
-
-# 3. Vẽ biểu đồ đối chứng tổng hợp Mean ± Std từ 3 lần lặp mỗi CNI vào results/compare/
-python plot.py results/calico_* results/cilium_*
-
-# 4. Tái tạo hai sơ đồ Topology & System Architecture
-python generate_diagrams.py
 ```
 
 ---

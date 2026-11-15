@@ -9,6 +9,8 @@ venv/
 
 # Tai lieu ban nhap & file chup man hinh VM tam thoi
 synthesize_results.py
+plot.py
+generate_diagrams.py
 batch_tasks.json
 format_sheets.ps1
 *.pdf
